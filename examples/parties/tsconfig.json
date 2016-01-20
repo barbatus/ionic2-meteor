@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "diagnostics": true,
+    "noResolve": false,
+    "experimentalDecorators": true,
+    "module": "system"
+  },
+  "meteorCompilerOptions": {
+    "alwaysThrow": false,
+    "useCache": true
+  },
+  "files": [
+    "typings/angular2-meteor.d.ts",
+    "typings/meteor-accounts.d.ts",
+    "client/app.ts",
+    "server/main.ts"
+  ]
+}
