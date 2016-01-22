@@ -22,7 +22,7 @@ export class PartyDetails extends MeteorComponent {
 
     constructor(nav: NavController, params: NavParams) {
         super();
-        let partyId = params.data['partyId'];
+        let partyId = params.get('partyId');
         this.subscribe('party', partyId, () => {
             this.autorun(() => {
                 this.party = Parties.findOne(partyId);

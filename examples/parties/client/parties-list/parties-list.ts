@@ -32,6 +32,6 @@ export class PartiesList extends MeteorComponent {
     }
 
     navDetails(partyId: number) {
-        this.nav.push(PartyDetails, { partyId });
+        this.nav.push(PartyDetails, { partyId }, {}, () => {});
     }
 }

@@ -38,6 +38,11 @@ Package.onUse(function(api) {
     'node_modules/ionic-framework/bundles/ionic.md.css',
     'node_modules/ionic-framework/bundles/ionic.system.js'
   ], 'client');
+
+  api.addFiles([
+    'typings/ionic-framework/ionic.d.ts',
+    'typings/ionic2-meteor/ionic2-meteor.d.ts'
+  ], 'server');
 });
 
 Package.onTest(function(api) {

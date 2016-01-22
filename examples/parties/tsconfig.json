@@ -11,9 +11,10 @@
     "useCache": true
   },
   "files": [
+    "typings/ionic-framework/ionic.d.ts",
+    "typings/ionic2-meteor/ionic2-meteor.d.ts",
     "typings/angular2-meteor.d.ts",
     "typings/meteor-accounts.d.ts",
-    "typings/tsd.d.ts",
     "typings/party.d.ts",
     "client/app.ts",
     "server/main.ts"
