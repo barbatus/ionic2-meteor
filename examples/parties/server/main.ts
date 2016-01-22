@@ -1,8 +1,6 @@
-'use strict';
+import {loadParties} from './load-parties';
+import './parties';
+import './users';
+import 'collections/methods';
 
-import {loadTestData} from './test_data';
-export * from './pubs';
-
-Meteor.startup(function() {
-  loadTestData();
-});
+Meteor.startup(loadParties);

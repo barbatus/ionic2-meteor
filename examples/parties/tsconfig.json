@@ -3,7 +3,8 @@
     "diagnostics": true,
     "noResolve": false,
     "experimentalDecorators": true,
-    "module": "system"
+    "module": "system",
+    "target": "es5"
   },
   "meteorCompilerOptions": {
     "alwaysThrow": false,
@@ -12,6 +13,8 @@
   "files": [
     "typings/angular2-meteor.d.ts",
     "typings/meteor-accounts.d.ts",
+    "typings/tsd.d.ts",
+    "typings/party.d.ts",
     "client/app.ts",
     "server/main.ts"
   ]

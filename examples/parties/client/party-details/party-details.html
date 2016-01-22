@@ -1,0 +1,59 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Party Details
+  </ion-title>
+</ion-navbar>
+
+<ion-content #content>
+
+  <form (submit)="saveParty(party)" *ngIf="party">
+
+    <ion-list>
+      <ion-input fixed-label>
+        <ion-label>Name</ion-label>
+        <input [disabled]="!isOwner" type="text" [(ngModel)]="party.name">
+      </ion-input>
+
+      <ion-input fixed-label>
+        <ion-label>Description</ion-label>
+        <input [disabled]="!isOwner" type="text" [(ngModel)]="party.description">
+      </ion-input>
+
+      <ion-input fixed-label>
+        <ion-label>Location</ion-label>
+        <input [disabled]="!isOwner" type="text" [(ngModel)]="party.location">
+      </ion-input>
+    </ion-list>
+
+    <div padding>
+      <button [disabled]="!isOwner" block type="submit">Save</button>
+    </div>
+  </form>
+
+  <ion-list *ngIf="isOwner">
+    <ion-list-header>
+      Users to invite
+    </ion-list-header>
+    <ion-item *ngFor="#user of users">
+      <div>{{ user | displayName }}</div>
+      <button (click)="invite(user)" outline item-right>
+        Invite
+      </button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="isInvited" inset>
+    <ion-list-header>
+      Reply to the invitation
+    </ion-list-header>
+    <button (click)="reply('yes')" small outline>
+      I'm going!
+    </button>
+    <button (click)="reply('maybe')" small outline>
+      Maybe
+    </button>
+    <button (click)="reply('no')" small outline>
+      No
+    </button>
+  </ion-list>
+</ion-content>

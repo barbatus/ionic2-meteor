@@ -1,0 +1,21 @@
+<ion-navbar *navbar>
+  <button menuToggle="leftMenu">
+    <ion-icon name='menu'></ion-icon>
+  </button>
+
+  <ion-title>
+    Parties
+  </ion-title>
+</ion-navbar>
+
+<ion-content #content>
+  <ion-list inset>
+    <ion-item *ngFor="#party of parties">
+      {{party.name}}
+      <button clear item-right (click)="navDetails(party._id)">
+        <ion-icon name="arrow-forward">
+        </ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>
