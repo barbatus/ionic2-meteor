@@ -8,7 +8,7 @@ The latter has so far one class decorator that glues Meteor and Ionic 2 together
 
 ## Bootstrapping
 
-In order to boostrap your Ionic 2 app, import and apply `MeteorApp` decorator as follows:
+In order to bootstrap your Ionic 2 app, import and apply `MeteorApp` decorator as follows:
 
 ```ts
 
