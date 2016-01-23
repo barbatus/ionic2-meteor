@@ -12,7 +12,11 @@
   <ion-list inset>
     <ion-item *ngFor="#party of parties">
       {{party.name}}
-      <button clear item-right (click)="navDetails(party._id)">
+      <button [hidden]="!isOwner(party)" clear item-right (click)="removeParty(party)">
+        <ion-icon name="close-circle">
+        </ion-icon>
+      </button>
+      <button clear item-right [navPush]="partyDetails" [navParams]="{partyId: party._id}">
         <ion-icon name="arrow-forward">
         </ion-icon>
       </button>

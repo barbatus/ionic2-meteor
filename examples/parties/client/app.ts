@@ -33,8 +33,6 @@ export class Socially {
     }
 
     openPage(page) {
-        this.app.getComponent('leftMenu').close();
-
         let nav = this.app.getComponent('nav');
         nav.push(page);
     }
