@@ -1,6 +1,6 @@
 Package.describe({
   name: 'barbatus:ionic2-meteor',
-  version: '0.1.0',
+  version: '0.1.2',
   summary: 'Ionic2 Npm packaged for Meteor',
   git: 'https://github.com/barbatus/ionic2-meteor',
   documentation: null
@@ -38,6 +38,10 @@ Package.onUse(function(api) {
     'node_modules/ionic-framework/bundles/ionic.md.css',
     'node_modules/ionic-framework/bundles/ionic.system.js'
   ], 'client');
+
+  api.addFiles([
+    'node_modules/web-animations-js/web-animations.min.js'
+  ], 'web.cordova');
 
   api.addFiles([
     'typings/ionic-framework/ionic.d.ts',
