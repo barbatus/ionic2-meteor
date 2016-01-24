@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "dependencies": {
-    "ionic-framework": "2.0.0-alpha.49",
+    "ionic-framework": "2.0.0-alpha.51",
     "web-animations-js": "2.1.4"
   },
   "devDependencies": {

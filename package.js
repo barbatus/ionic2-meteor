@@ -1,6 +1,6 @@
 Package.describe({
   name: 'barbatus:ionic2-meteor',
-  version: '0.1.2',
+  version: '0.1.3',
   summary: 'Ionic2 Npm packaged for Meteor',
   git: 'https://github.com/barbatus/ionic2-meteor',
   documentation: null
@@ -10,7 +10,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.0.1');
 
   api.use([
-    'urigo:angular2-meteor@0.3.8'
+    'urigo:angular2-meteor@0.3.9'
   ]);
 
   api.imply([
