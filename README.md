@@ -29,6 +29,8 @@ This package adds two declaration files into the `typings` folder of your app: o
 ## Demo
 
 Check out an Ionic 2 demo in the `examples` folder, which's a copy of the Angular 2 Tutorial's [Socially app](https://github.com/Urigo/meteor-angular2.0-socially) built with Ionic2
-(except maps).
+(except maps). 
+
+To run the demo hit `meteor run ios`.
 
 
