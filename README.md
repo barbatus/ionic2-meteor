@@ -26,21 +26,30 @@ export class Socially {}
 ## Typings
 
 This package adds two definition files into the `typings` folder of your app: one for Ionic 2 and one for Ionic2-Meteor.
-Other typings dependencied that need to be installed: Meteor, es6-promise and es6-shim:
 
-    npm install typings -g
+Other typings dependencies that need to be installed: Meteor, ES6-promise and ES6-shim:
 
-    typings install meteor --ambient
+````bash
+  npm install typings -g
 
-    typings install es6-promise --ambient
+  typings install meteor --ambient
 
-    typings install es6-shim --ambient
+  typings install es6-promise --ambient
 
-`typings` will create `main.ts` in typings folder. Add it to the `tsconfig.json` of your app:
-
+  typings install es6-shim --ambient
 ````
+
+`typings` will create `main.ts` in the _typings_ folder. Add it to the `tsconfig.json` of your app along with Ionic 2 and
+Angular2-Meteor definitions:
+
+````json
   {
-    "typings": ["typings/main.d.ts"]
+    "typings": [
+      "typings/ionic2-meteor/ionic-framework/ionic.d.ts",
+      "typings/ionic2-meteor/ionic2-meteor.d.ts",
+      "typings/angular2-meteor/angular2-meteor.d.ts",
+      "typings/main.d.ts"
+    ]
   }
 ````
 
