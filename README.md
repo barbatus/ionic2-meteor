@@ -6,6 +6,8 @@ The former is a core Ionic 2 namespace that contains all Ionic 2 components, whi
 
 The latter has so far one class decorator that glues Meteor and Ionic 2 together.
 
+Ionic 2 version - **alpha-54**.
+
 ## Bootstrapping
 
 In order to bootstrap your Ionic 2 app, import and apply `MeteorApp` decorator as follows:
@@ -23,8 +25,24 @@ export class Socially {}
 
 ## Typings
 
-This package adds two declaration files into the `typings` folder of your app: one for Ionic 2 and one for Ionic2-Meteor.
+This package adds two definition files into the `typings` folder of your app: one for Ionic 2 and one for Ionic2-Meteor.
+Other typings dependencied that need to be installed: Meteor, es6-promise and es6-shim:
 
+    npm install typings -g
+
+    typings install meteor --ambient
+
+    typings install es6-promise --ambient
+
+    typings install es6-shim --ambient
+
+`typings` will create `main.ts` in typings folder. Add it to the `tsconfig.json` of your app:
+
+````
+  {
+    "typings": ["typings/main.d.ts"]
+  }
+````
 
 ## Demo
 

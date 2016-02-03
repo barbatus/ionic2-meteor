@@ -7,22 +7,27 @@
 <ion-content #content>
   <form [ngFormModel]="partiesForm" #f="ngForm" (submit)="addParty(f.value)">
     <ion-list>
-      <ion-input fixed-label>
-        <ion-label>Name</ion-label>
-        <input type="text" ngControl="name">
-      </ion-input>
-      <ion-input fixed-label>
-        <ion-label>Description</ion-label>
-        <input type="text" ngControl="description">
-      </ion-input>
-      <ion-input fixed-label>
-        <ion-label>Location</ion-label>
-        <input type="text" ngControl="location">
-      </ion-input>
-      <ion-checkbox ngControl="public">
-        Public
-      </ion-checkbox>
-      <button block>Create</button>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input type="text" ngControl="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Description</ion-label>
+        <ion-input type="text" ngControl="description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Location</ion-label>
+        <ion-input type="text" ngControl="location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Public</ion-label>
+        <ion-checkbox ngControl="public">
+        </ion-checkbox>
+      </ion-item>
+
+      <div padding>
+        <button block>Create</button>
+      </div>
     </ion-list>
   </form>
-<ion-content #content>
+</ion-content>

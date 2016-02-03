@@ -7,22 +7,21 @@
 <ion-content #content>
 
   <form (submit)="saveParty(party)" *ngIf="party">
-
     <ion-list>
-      <ion-input fixed-label>
-        <ion-label>Name</ion-label>
-        <input [disabled]="!isOwner" type="text" [(ngModel)]="party.name">
-      </ion-input>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input [disabled]="!isOwner" type="text" [(ngModel)]="party.name"></ion-input>
+      </ion-item>
 
-      <ion-input fixed-label>
-        <ion-label>Description</ion-label>
-        <input [disabled]="!isOwner" type="text" [(ngModel)]="party.description">
-      </ion-input>
+      <ion-item>
+        <ion-label fixed>Description</ion-label>
+        <ion-input [disabled]="!isOwner" type="text" [(ngModel)]="party.description"></ion-input>
+      </ion-item>
 
-      <ion-input fixed-label>
-        <ion-label>Location</ion-label>
-        <input [disabled]="!isOwner" type="text" [(ngModel)]="party.location.name">
-      </ion-input>
+      <ion-item>
+        <ion-label fixed>Location</ion-label>
+        <ion-input [disabled]="!isOwner" type="text" [(ngModel)]="party.location.name"></ion-input>
+      </ion-item>
     </ion-list>
 
     <div padding>
@@ -30,7 +29,7 @@
     </div>
   </form>
 
-  <ion-list *ngIf="isOwner">
+  <ion-list *ngIf="isOwner && !isPublic">
     <ion-list-header>
       Users to invite
     </ion-list-header>

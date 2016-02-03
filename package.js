@@ -1,16 +1,16 @@
 Package.describe({
   name: 'barbatus:ionic2-meteor',
-  version: '0.1.3',
+  version: '0.1.4',
   summary: 'Ionic2 Npm packaged for Meteor',
   git: 'https://github.com/barbatus/ionic2-meteor',
   documentation: null
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.2.0.1');
+  api.versionsFrom('1.2.1');
 
   api.use([
-    'urigo:angular2-meteor@0.3.9'
+    'urigo:angular2-meteor@0.4.1'
   ]);
 
   api.imply([
@@ -25,9 +25,13 @@ Package.onUse(function(api) {
     'bootstrap.ts'
   ], 'client');
 
+  api.addFiles([
+    'node_modules/web-animations-js/web-animations.min.js'
+  ], 'client');
+
   api.addAssets([
     'node_modules/ionic-framework/fonts/ionicons.ttf',
-    'node_modules/ionic-framework/fonts/ionicons.woff',
+    'node_modules/ionic-framework/fonts/ionicons.woff2',
     'node_modules/ionic-framework/fonts/roboto-regular.ttf',
     'node_modules/ionic-framework/fonts/roboto-regular.woff'
   ], 'client');
@@ -39,13 +43,10 @@ Package.onUse(function(api) {
     'node_modules/ionic-framework/bundles/ionic.system.js'
   ], 'client');
 
-  api.addFiles([
-    'node_modules/web-animations-js/web-animations.min.js'
-  ], 'web.cordova');
-
+  // Install typings.
   api.addFiles([
     'typings/ionic-framework/ionic.d.ts',
-    'typings/ionic2-meteor/ionic2-meteor.d.ts'
+    'typings/ionic2-meteor.d.ts'
   ], 'server');
 });
 
