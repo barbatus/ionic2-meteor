@@ -14,8 +14,6 @@ import {PartiesList} from 'client/parties-list/parties-list';
 
 import {Login} from 'client/login/login';
 
-import {PartyForm} from 'client/party-form/party-form';
-
 @MeteorApp({
   templateUrl: '/client/app.html'
 })
@@ -28,7 +26,6 @@ export class Socially {
     constructor(app: IonicApp) {
         this.app = app;
         this.login = Login;
-        this.partyForm = PartyForm;
         this.partiesList = PartiesList;
     }
 

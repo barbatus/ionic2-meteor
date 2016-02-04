@@ -1,0 +1,13 @@
+.stats ion-row {
+  padding: 0
+}
+
+.stats ion-row:first-child {
+  font-size: 8px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.stats ion-badge {
+  font-size: 10px;
+}

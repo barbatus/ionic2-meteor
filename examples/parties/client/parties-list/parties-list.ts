@@ -11,7 +11,12 @@ import {MeteorComponent} from 'angular2-meteor';
 
 import {InjectUser} from 'meteor-accounts';
 
+import {RsvpPipe} from 'client/lib/pipes';
+
+import {PartyForm} from 'client/party-form/party-form';
+
 @Page({
+    pipes: [RsvpPipe],
     templateUrl: '/client/parties-list/parties-list.html'
 })
 @InjectUser()
@@ -25,7 +30,7 @@ export class PartiesList extends MeteorComponent {
     location: ReactiveVar<string> = new ReactiveVar<string>(null);
     user: Meteor.User;
 
-    constructor() {
+    constructor(private nav: NavController) {
         super();
 
         this.partyDetails = PartyDetails;
@@ -56,5 +61,9 @@ export class PartiesList extends MeteorComponent {
         }
 
         return false;
+    }
+
+    addParty() {
+        this.nav.push(PartyForm);
     }
 }

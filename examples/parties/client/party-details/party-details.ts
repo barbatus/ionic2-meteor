@@ -28,7 +28,7 @@ export class PartyDetails extends MeteorComponent {
                 this.party = Parties.findOne(partyId);
                 this.getUsers(this.party);
             });
-        });
+        }, true);
 
         this.subscribe('uninvited', partyId, () => {
             this.getUsers(this.party);

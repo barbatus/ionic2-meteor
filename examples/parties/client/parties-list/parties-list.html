@@ -1,18 +1,50 @@
 <ion-navbar *navbar>
-  <button menuToggle="leftMenu">
-    <ion-icon name='menu'></ion-icon>
-  </button>
+  <ion-buttons start>
+    <button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+  </ion-buttons>
 
   <ion-title>
     Parties
   </ion-title>
+
+  <ion-buttons end>
+    <button (click)="addParty()">
+      <ion-icon name='add'></ion-icon>
+    </button>
+  </ion-buttons>
 </ion-navbar>
 
 <ion-content #content>
   <ion-list inset>
     <ion-item *ngFor="#party of parties">
       {{party.name}}
-      <button [hidden]="!isOwner(party)" clear item-right (click)="removeParty(party)">
+      <div item-right class="stats">
+        <ion-row center>
+          <ion-col>Yes</ion-col>
+          <ion-col>Maybe</ion-col>
+          <ion-col>No</ion-col>
+        </ion-row>
+        <ion-row center>
+          <ion-col>
+            <ion-badge light>
+              {{party | rsvp:'yes'}}
+            </ion-badge>
+          </ion-col>
+          <ion-col>
+            <ion-badge light>
+              {{party | rsvp:'maybe'}}
+            </ion-badge>
+          </ion-col>
+          <ion-col>
+            <ion-badge light>
+              {{party | rsvp:'no'}}
+            </ion-badge>
+          </ion-col>
+        </ion-row>
+      </div>
+      <button [hidden]="!isOwner(party)" clear item-right danger (click)="removeParty(party)">
         <ion-icon name="close-circle">
         </ion-icon>
       </button>

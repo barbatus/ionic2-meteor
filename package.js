@@ -1,16 +1,16 @@
 Package.describe({
   name: 'barbatus:ionic2-meteor',
-  version: '0.1.4',
+  version: '0.1.5',
   summary: 'Ionic2 Npm packaged for Meteor',
   git: 'https://github.com/barbatus/ionic2-meteor',
-  documentation: null
+  documentation: 'README.md'
 });
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
 
   api.use([
-    'urigo:angular2-meteor@0.4.1'
+    'urigo:angular2-meteor@0.4.2'
   ]);
 
   api.imply([
@@ -26,7 +26,7 @@ Package.onUse(function(api) {
   ], 'client');
 
   api.addFiles([
-    'node_modules/web-animations-js/web-animations.min.js'
+    'node_modules/ionic-framework/js/web-animations.min.js'
   ], 'client');
 
   api.addAssets([

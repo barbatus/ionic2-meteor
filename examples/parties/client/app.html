@@ -1,4 +1,4 @@
-<ion-menu [content]="content" id="leftMenu" side="left">
+<ion-menu [content]="content">
   <ion-toolbar>
     <ion-title>
       Socially
@@ -6,9 +6,6 @@
   </ion-toolbar>
   <ion-content>
     <ion-list>
-      <button ion-item (click)="openPage(partyForm)" menuClose>
-        Party Form
-      </button>
       <button ion-item (click)="openPage(login)" menuClose>
         Login
       </button>
