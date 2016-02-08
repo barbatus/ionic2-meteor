@@ -1,6 +1,6 @@
 Package.describe({
   name: 'barbatus:ionic2-meteor',
-  version: '0.1.5',
+  version: '0.1.6',
   summary: 'Ionic2 Npm packaged for Meteor',
   git: 'https://github.com/barbatus/ionic2-meteor',
   documentation: 'README.md'
