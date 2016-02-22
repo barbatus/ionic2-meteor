@@ -6,7 +6,7 @@ The former is a core Ionic 2 namespace that contains all Ionic 2 components, whi
 
 The latter has so far one class decorator that glues Meteor and Ionic 2 together.
 
-Ionic 2 version - **alpha-56**.
+Ionic 2 version - **beta-1**.
 
 ## Bootstrapping
 
