@@ -5,24 +5,28 @@
 </ion-navbar>
 
 <ion-content #content>
-  <form (submit)="login($event)" *ngIf="!user" [ngFormModel]="loginForm">
+<ion-item [hidden]="user">
+  <ion-label>Sing-up</ion-label>
+  <ion-checkbox #cb  ></ion-checkbox>
+</ion-item>
+  <form (submit)="submit($event, cb.checked)" *ngIf="!user" [ngFormModel]="accountForm"> 
     <ion-list>
       <ion-item>
         <ion-label floating>Username</ion-label>
-        <ion-input type="text" ngControl="user"></ion-input>
+        <ion-input type="text" ngControl="username"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input type="password" ngControl="pwd"></ion-input>
+        <ion-input type="password" ngControl="password"></ion-input>
       </ion-item>
     </ion-list>
 
     <div padding>
-      <button type="submit" block>LogIn</button>
+      <button type="submit" block>{{cb.checked? 'Sing-up':'Login'}}</button>
     </div>
   </form>
 
   <div *ngIf="user" padding>
-    <button type="button" block (click)="logout()">LogOut</button>
+    <button type="button" block (click)="logout()">Logout</button>
   </div>
 </ion-content>

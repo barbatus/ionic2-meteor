@@ -14,7 +14,7 @@ import {MeteorComponent} from 'angular2-meteor';
 })
 @InjectUser()
 export class Login extends MeteorComponent {
-  loginForm: ControlGroup;
+  accountForm: ControlGroup;
   user: Meteor.User;
   private _accounts: AccountsService;
 
@@ -22,22 +22,35 @@ export class Login extends MeteorComponent {
     super();
     this._accounts = accounts;
     var fb = new FormBuilder()
-    this.loginForm = fb.group({
-      user: ['', Validators.required],
-      pwd: ['', Validators.required]
+    this.accountForm = fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
+  submit(event,register) {
+      register ? this.signup(event):this.login(event)
+  }
+  signup(event) {
+    event.preventDefault();
 
+    if (this.accountForm.valid) { 
+      var account = this.accountForm.value;
+      //the register function fails to cast args into AccountDetails, 
+      //a json with username and password properties must be passed in order for the function to work:
+      this._accounts.register(account)
+      .then(this.clearForm())
+        .catch(err => {
+          alert(err);
+        });
+    }
+  }
   login(event) {
     event.preventDefault();
 
-    if (this.loginForm.valid) {
-      var login = this.loginForm.value;
-      this._accounts.login(login.user, login.pwd)
-        .then(() => {
-          (<Control>this.loginForm.controls['user']).updateValue('');
-          (<Control>this.loginForm.controls['pwd']).updateValue('');
-        })
+    if (this.accountForm.valid) {
+      var account = this.accountForm.value;
+      this._accounts.login(account.username, account.password)
+        .then(this.clearForm())
         .catch(err => {
           alert(err);
         });
@@ -47,4 +60,9 @@ export class Login extends MeteorComponent {
   logout() {
     this._accounts.logout();
   }
+  clearForm() {
+          (<Control>this.accountForm.controls['username']).updateValue('');
+          (<Control>this.accountForm.controls['password']).updateValue('');
+          }
+      
 }
