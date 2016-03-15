@@ -19,7 +19,7 @@ import {Login} from 'client/login/login';
 })
 export class Socially {
     partiesList: Type;
-    login; Type;
+    login: Type;
     partyForm: Type;
     app: IonicApp;
 
